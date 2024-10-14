@@ -1,5 +1,6 @@
 import {Button, Grid, GridItem, Show} from '@chakra-ui/react'
 import './App.css'
+import NavBar from "./components/Navbar";
 
 function App() {
     const breakpoints = {
@@ -8,7 +9,9 @@ function App() {
     }
     return (
         <Grid templateAreas={breakpoints}>
-            <GridItem area={'nav'} bg='coral'>Nav</GridItem>
+            <GridItem area={'nav'}>
+                <NavBar></NavBar>
+            </GridItem>
             <Show above="lg">
                 <GridItem area={'aside'} bg='gold'>Aside</GridItem>
             </Show>
