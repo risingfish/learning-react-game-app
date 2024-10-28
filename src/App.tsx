@@ -1,6 +1,8 @@
 import {Button, Grid, GridItem, Show} from '@chakra-ui/react'
 import './App.css'
 import NavBar from "./components/Navbar";
+import GameGrid from "./components/GameGrid";
+import {Dispatch} from "react";
 
 function App() {
     const breakpoints = {
@@ -15,7 +17,9 @@ function App() {
             <Show above="lg">
                 <GridItem area={'aside'}>Aside</GridItem>
             </Show>
-            <GridItem area={'main'}>Main</GridItem>
+            <GridItem area={'main'}>
+                <GameGrid />
+            </GridItem>
         </Grid>
     )
 }
