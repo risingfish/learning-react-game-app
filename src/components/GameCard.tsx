@@ -8,12 +8,11 @@ import getCroppedImageUrl from "../services/image-url";
 
 interface GameCardProps {
     game: Game
-    parent_platforms: ParentPlatform[]
 }
 
 function GameCard({ game }: GameCardProps) {
     return (
-        <Card borderRadius={10} overflow="hidden">
+        <Card borderRadius={10} overflow="hidden" width='300px'>
             <Image src={getCroppedImageUrl(game.background_image)} />
             <CardBody>
                 <Heading fontSize='2xl' textAlign='left'>{game.name}</Heading>
