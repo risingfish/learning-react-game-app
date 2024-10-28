@@ -5,6 +5,7 @@ interface Game {
     name: string;
     background_image: string;
     parent_platforms: { platform: ParentPlatform }[];
+    metacritic: number;
 }
 
 export default Game;
