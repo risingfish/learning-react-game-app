@@ -3,6 +3,7 @@ import './App.css'
 import NavBar from "./components/Navbar";
 import GameGrid from "./components/GameGrid";
 import {Dispatch} from "react";
+import GenreList from "./components/GenreList";
 
 function App() {
     const breakpoints = {
@@ -15,7 +16,7 @@ function App() {
                 <NavBar></NavBar>
             </GridItem>
             <Show above="lg">
-                <GridItem area={'aside'}>Aside</GridItem>
+                <GenreList></GenreList>
             </Show>
             <GridItem area={'main'}>
                 <GameGrid />
