@@ -1,31 +1,10 @@
-import React, {Dispatch, SetStateAction, useEffect, useState} from 'react';
-import apiClient from '../services/api-clients'
-
-interface Game {
-    id: number;
-    name: string;
-}
-
-interface GamesResponse {
-    count: number;
-    results: Game[]
-}
+import React from 'react';
+import Game from "../interfaces/Game";
+import useGames from "../hooks/useGames";
 
 const GameGrid = () => {
-    const [games, setGames]: [games: Game[], setGames: Dispatch<SetStateAction<Game[]>>] = useState<Game[]>([]);
-    const [error, setError]: [error: string, setError: Dispatch<SetStateAction<string>>] = useState<string>('');
 
-    useEffect(() => {
-        apiClient.get<GamesResponse>('/games')
-            .then(res => {
-                setGames(res.data.results)
-                setError('')
-            })
-            .catch((error) => {
-                setError(error.message)
-            });
-    }, [])
-
+    const { games, error }: {games: Game[], error: string } = useGames()
     return (
         <>
             {error && <div>{error}</div>}
