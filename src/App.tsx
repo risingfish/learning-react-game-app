@@ -10,13 +10,20 @@ function App() {
         base: `"nav" "main"`,
         lg: `"nav nav" "aside main"`
     }
+
+    const columns = {
+        base: '1fr',
+        lg: '200px 1fr'
+    }
     return (
-        <Grid templateAreas={breakpoints}>
+        <Grid templateAreas={breakpoints} templateColumns={columns}>
             <GridItem area={'nav'}>
                 <NavBar></NavBar>
             </GridItem>
             <Show above="lg">
-                <GenreList></GenreList>
+                <GridItem area='aside'>
+                    <GenreList />
+                </GridItem>
             </Show>
             <GridItem area={'main'}>
                 <GameGrid />
