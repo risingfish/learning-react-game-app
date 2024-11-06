@@ -1,11 +1,11 @@
-import ParentPlatform from "./ParentPlatform";
+import Platform from "./Platform";
 
 interface Game {
-    id: number;
-    name: string;
-    background_image: string;
-    parent_platforms: { platform: ParentPlatform }[];
-    metacritic: number;
+  id: number;
+  name: string;
+  background_image: string;
+  parent_platforms: { platform: Platform }[];
+  metacritic: number;
 }
 
 export default Game;
