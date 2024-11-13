@@ -7,6 +7,7 @@ import GenreList from "./components/GenreList";
 import Genre from "./interfaces/Genre";
 import PlatformSelector from "./components/PlatformSelector";
 import Platform from "./interfaces/Platform";
+import GameQuery from "./interfaces/GameQuery";
 
 function App() {
     const breakpoints = {
@@ -19,10 +20,7 @@ function App() {
         lg: "200px 1fr",
     };
 
-    const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
-    const [selectedPlatform, setSelectPlatform] = useState<Platform | null>(
-        null
-    );
+    const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery)
 
     return (
         <Grid templateAreas={breakpoints} templateColumns={columns}>
@@ -32,20 +30,19 @@ function App() {
             <Show above="lg">
                 <GridItem area="aside">
                     <GenreList
-                        onSelectGenre={setSelectedGenre}
-                        selectedGenre={selectedGenre}
+                        onSelectGenre={(genre) => setGameQuery({...gameQuery, genre})}
+                        selectedGenre={gameQuery.genre}
                     />
                 </GridItem>
             </Show>
             <GridItem area={"main"}>
                 <Flex pb="3">
                     <PlatformSelector
-                        onSelectPlatform={setSelectPlatform}
+                        onSelectPlatform={(platform) => setGameQuery({...gameQuery, platform})}
                     ></PlatformSelector>
                 </Flex>
                 <GameGrid
-                    selectedGenre={selectedGenre}
-                    selectedPlatform={selectedPlatform}
+                    gameQuery={gameQuery}
                 />
             </GridItem>
         </Grid>

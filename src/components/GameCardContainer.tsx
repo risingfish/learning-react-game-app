@@ -1,11 +1,12 @@
-import { ReactNode } from "react";
-import { Box } from "@chakra-ui/react";
+import {ReactNode} from "react";
+import {Box} from "@chakra-ui/react";
 
 interface GameCardContainerProps {
-    children: ReactNode;
+    children: ReactNode,
+    key?: number
 }
 
-function GameCardContainer({ children }: GameCardContainerProps) {
+function GameCardContainer({children, key}: GameCardContainerProps) {
     return (
         <Box borderRadius={10} overflow="hidden">
             {children}
