@@ -8,6 +8,7 @@ import Genre from "./interfaces/Genre";
 import PlatformSelector from "./components/PlatformSelector";
 import Platform from "./interfaces/Platform";
 import GameQuery from "./interfaces/GameQuery";
+import platform from "./interfaces/Platform";
 
 function App() {
     const breakpoints = {
@@ -39,6 +40,7 @@ function App() {
                 <Flex pb="3">
                     <PlatformSelector
                         onSelectPlatform={(platform) => setGameQuery({...gameQuery, platform})}
+                        gameQuery={gameQuery}
                     ></PlatformSelector>
                 </Flex>
                 <GameGrid
