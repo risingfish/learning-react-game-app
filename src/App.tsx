@@ -1,4 +1,4 @@
-import { Button, Flex, Grid, GridItem, Show } from "@chakra-ui/react";
+import {Button, Flex, Grid, GridItem, HStack, Show} from "@chakra-ui/react";
 import "./App.css";
 import NavBar from "./components/Navbar";
 import GameGrid from "./components/GameGrid";
@@ -9,6 +9,7 @@ import PlatformSelector from "./components/PlatformSelector";
 import Platform from "./interfaces/Platform";
 import GameQuery from "./interfaces/GameQuery";
 import platform from "./interfaces/Platform";
+import SortSelector from "./components/SortSelector";
 
 function App() {
     const breakpoints = {
@@ -37,12 +38,13 @@ function App() {
                 </GridItem>
             </Show>
             <GridItem area={"main"}>
-                <Flex pb="3">
+                <HStack spacing="5" pb="5">
                     <PlatformSelector
                         onSelectPlatform={(platform) => setGameQuery({...gameQuery, platform})}
                         gameQuery={gameQuery}
                     ></PlatformSelector>
-                </Flex>
+                    <SortSelector onSelectSort={(sort) => console.log(sort)}></SortSelector>
+                </HStack>
                 <GameGrid
                     gameQuery={gameQuery}
                 />
