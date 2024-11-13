@@ -6,6 +6,7 @@ import { Dispatch, SetStateAction, useState } from "react";
 import GenreList from "./components/GenreList";
 import Genre from "./interfaces/Genre";
 import PlatformSelector from "./components/PlatformSelector";
+import Platform from "./interfaces/Platform";
 
 function App() {
     const breakpoints = {
@@ -19,6 +20,9 @@ function App() {
     };
 
     const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
+    const [selectedPlatform, setSelectPlatform] = useState<Platform | null>(
+        null
+    );
 
     return (
         <Grid templateAreas={breakpoints} templateColumns={columns}>
@@ -35,9 +39,14 @@ function App() {
             </Show>
             <GridItem area={"main"}>
                 <Flex pb="3">
-                    <PlatformSelector></PlatformSelector>
+                    <PlatformSelector
+                        onSelectPlatform={setSelectPlatform}
+                    ></PlatformSelector>
                 </Flex>
-                <GameGrid selectedGenre={selectedGenre} />
+                <GameGrid
+                    selectedGenre={selectedGenre}
+                    selectedPlatform={selectedPlatform}
+                />
             </GridItem>
         </Grid>
     );
