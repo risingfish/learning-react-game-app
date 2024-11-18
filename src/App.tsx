@@ -24,7 +24,7 @@ function App() {
     return (
         <Grid templateAreas={breakpoints} templateColumns={columns}>
             <GridItem area={"nav"}>
-                <NavBar></NavBar>
+                <NavBar onSearch={(searchText) => setGameQuery({...gameQuery, searchText})}></NavBar>
             </GridItem>
             <Show above="lg">
                 <GridItem area="aside">
