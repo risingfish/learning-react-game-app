@@ -7,6 +7,8 @@ import GenreList from "./components/GenreList";
 import PlatformSelector from "./components/PlatformSelector";
 import GameQuery from "./interfaces/GameQuery";
 import SortSelector from "./components/SortSelector";
+import GameHeading from "./components/GameHeading";
+import platform from "./interfaces/Platform";
 
 function App() {
     const breakpoints = {
@@ -34,7 +36,8 @@ function App() {
                     />
                 </GridItem>
             </Show>
-            <GridItem area={"main"}>
+            <GridItem area="main" align='left'>
+                <GameHeading gameQuery={gameQuery} />
                 <Flex pb="5">
                     <Box marginRight="5">
                         <PlatformSelector
