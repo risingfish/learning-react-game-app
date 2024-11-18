@@ -1,14 +1,11 @@
-import {Box, Button, Flex, Grid, GridItem, HStack, Show} from "@chakra-ui/react";
+import {Box, Flex, Grid, GridItem, Show} from "@chakra-ui/react";
 import "./App.css";
 import NavBar from "./components/Navbar";
 import GameGrid from "./components/GameGrid";
-import { Dispatch, SetStateAction, useState } from "react";
+import { useState } from "react";
 import GenreList from "./components/GenreList";
-import Genre from "./interfaces/Genre";
 import PlatformSelector from "./components/PlatformSelector";
-import Platform from "./interfaces/Platform";
 import GameQuery from "./interfaces/GameQuery";
-import platform from "./interfaces/Platform";
 import SortSelector from "./components/SortSelector";
 
 function App() {
