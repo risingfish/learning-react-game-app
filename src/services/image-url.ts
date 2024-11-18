@@ -1,7 +1,10 @@
 import noImage from '../assets/ImagePlaceholder/no-image-placeholder.webp'
 
-const getCroppedImageUrl = (url: string) => {
-    if (!url) return noImage;
+/**
+ * @param url
+ */
+const getCroppedImageUrl = (url: string): string => {
+    if (!url) return <string>noImage;
 
     const search: string = "media/";
     const index: number = url.indexOf(search) + search.length;
