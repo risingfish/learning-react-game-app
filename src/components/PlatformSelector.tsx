@@ -15,7 +15,6 @@ function PlatformSelector({ gameQuery, onSelectPlatform }: Props) {
     const { data, error }: { data: Platform[]; error: string } = usePlatforms();
 
     if (error) return null;
-    console.log("Game query is:", gameQuery);
 
     return (
         <>
