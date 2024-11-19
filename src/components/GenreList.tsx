@@ -6,9 +6,8 @@ import {
     List,
     ListItem,
     Image,
-    Text,
     Spinner,
-    Button, Heading,
+    Button, Heading, Flex,
 } from "@chakra-ui/react";
 import getCroppedImageUrl from "../services/image-url";
 
@@ -29,7 +28,9 @@ function GenreList({ onSelectGenre, selectedGenre }: Props) {
 
     return (
         <>
-            <Heading marginBottom={3} fontSize='2xl'>Genres</Heading>
+            <Flex>
+                <Heading marginBottom={3} fontSize='2xl'>Genres</Heading>
+            </Flex>
             <List>
                 {data.map((genre) => (
                     <ListItem key={genre.id} paddingY="5px">

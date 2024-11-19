@@ -1,5 +1,5 @@
 import GameQuery from "../interfaces/GameQuery";
-import {Heading} from "@chakra-ui/react";
+import {Flex, Heading} from "@chakra-ui/react";
 
 interface Props {
     gameQuery: GameQuery;
@@ -12,7 +12,9 @@ function GameHeading({gameQuery}: Props) {
     heading.push('Games');
 
     return (
-        <Heading as='h1' pb="3">{heading.join(' ')}</Heading>
+        <Flex >
+            <Heading as='h1' pb="3" fontSize='2xl'>{heading.join(' ')}</Heading>
+        </Flex>
     );
 }
 
