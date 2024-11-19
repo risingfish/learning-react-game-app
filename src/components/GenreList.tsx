@@ -29,7 +29,7 @@ function GenreList({ onSelectGenre, selectedGenre }: Props) {
 
     return (
         <>
-            <Heading align="left" marginBottom={3} fontSize='2xl'>Genres</Heading>
+            <Heading marginBottom={3} fontSize='2xl'>Genres</Heading>
             <List>
                 {data.map((genre) => (
                     <ListItem key={genre.id} paddingY="5px">

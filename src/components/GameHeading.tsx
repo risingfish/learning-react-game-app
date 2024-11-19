@@ -12,7 +12,7 @@ function GameHeading({gameQuery}: Props) {
     heading.push('Games');
 
     return (
-        <Heading as='h1' placement='left' pb="3">{heading.join(' ')}</Heading>
+        <Heading as='h1' pb="3">{heading.join(' ')}</Heading>
     );
 }
 

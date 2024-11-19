@@ -36,7 +36,7 @@ function App() {
                     />
                 </GridItem>
             </Show>
-            <GridItem area="main" align='left'>
+            <GridItem area="main">
                 <GameHeading gameQuery={gameQuery} />
                 <Flex pb="5">
                     <Box marginRight="5">
